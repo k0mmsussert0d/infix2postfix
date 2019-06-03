@@ -1,1 +1,4 @@
 .vscode/
+*.o
+infix2postfix
+postfix2infix
