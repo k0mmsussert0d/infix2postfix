@@ -10,5 +10,6 @@ typedef struct {
 Stack* createStack(unsigned int);
 char push(Stack*, char);
 char pop(Stack*);
+char peek(Stack*);
 
 #endif
