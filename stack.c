@@ -32,5 +32,13 @@ char pop(Stack* stack) {
         return -1;
     }
 
-    return stack->array[--stack->top];
+    return stack->array[stack->top--];
+}
+
+char peek(Stack* stack) {
+    if(isEmpty(stack)) {
+        return -1;
+    }
+
+    return stack->array[stack->top];
 }
