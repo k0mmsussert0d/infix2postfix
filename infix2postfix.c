@@ -4,6 +4,7 @@
 #include <string.h>
 #include "stack.h"
 
+// TODO: handle input size dynamically
 #define BUFFER_SIZE 100
 
 char* infix2postfix(const char*);
@@ -40,11 +41,12 @@ char* infix2postfix(const char* input_exp) {
 
     strcpy(infix,input_exp);
 
+    // put the closing bracket at the end of infix expression
     infix[len] = ')';
     push(stack, '(');
 
-    const char* ptr = infix;
-    int i = 0;
+    const char* ptr = infix; // infix string iterator
+    int i = 0; //postfix string iterator
 
     while(*ptr != '\0') {
         if(isalnum(*ptr)) {
