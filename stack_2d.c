@@ -12,6 +12,8 @@ Stack2D* create2DStack(unsigned int capacity) {
     for(int i = 0; i < res->capacity; ++i) {
         res->array[i] = (char*)malloc(STACK_STRING_SIZE);
     }
+
+    return res;
 }
 
 static int isFull(Stack2D* stack) {

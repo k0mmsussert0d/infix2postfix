@@ -22,12 +22,14 @@ char* postfix2infix(const char* input_exp) {
         if(isalnum(*ptr)) {
             char* toPush = (char*)malloc(2); // 1 operand and null-terminator
             sprintf(toPush, "%c", *ptr);
+            push(stack, toPush);
         } else if(isOp(*ptr)) {
-            char* operand1 = pop(stack);
             char* operand2 = pop(stack);
+            char* operand1 = pop(stack);
 
-            char* toPush = (char*)malloc(6); // 2 brackets, 2 operands, operator and null-terminator
-            sprintf(toPush, "(%c%c%c)", operand1[0], *ptr, operand2[0]);
+            char* toPush = (char*)malloc(strlen(operand1) + strlen(operand2) + 4); // 2 brackets, 2 expressions, operator and null-terminator
+            sprintf(toPush, "(%s%c%s)", operand1, *ptr, operand2);
+            push(stack, toPush);
         }
 
         ++ptr;
