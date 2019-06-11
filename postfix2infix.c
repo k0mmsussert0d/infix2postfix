@@ -11,7 +11,7 @@ char* postfix2infix(const char*);
 int isOp(char);
 
 int main(int argc, char* argv[]) {
-    if(argc > 0) {
+    if(argc > 1) {
         for(int i = 1; i < argc; ++i) {
             printf("%s\n", postfix2infix(argv[i]));
         }
