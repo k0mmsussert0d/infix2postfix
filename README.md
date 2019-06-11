@@ -9,7 +9,7 @@ This tool comes with two apps. Both of them can be used in two ways. By passing 
 
 If you are passing expressions as command-line arguments, you're adviced to conclude them with single quotes `''` to prevent your shell from evaluating them.
 
-If you are using the standard input, the program will terminated once it reads `EOF` signal.
+If you are using the standard input, the program will be terminated once it reads `EOF` signal.
 
 Keep in mind, that none of these applications verify the input sanity. Passing incorrect arguments will result in undefined behaviour (most possibly a SIGSEGV).
 
@@ -17,6 +17,7 @@ Keep in mind, that none of these applications verify the input sanity. Passing i
 Converts expressions from infix to postfix format.
 
 Example of the usage in interactive mode:
+
 **input:**
 ```
 ./infix2postfix
@@ -32,10 +33,12 @@ ab*cd-e^/
 ```
 
 Example of usage with command-line arguments:
+
 **input:**
 ```
 ./infix2postfix a+b '(b+a)*c' 'a/(b*(c-x))^d'
 ```
+
 **output:**
 ```
 ab+
@@ -46,14 +49,16 @@ abcx-*d^/
 ### postfix2infix
 Converts expressions from postfix to infix format. Input methods are identical as above.
 
-There will be additional, unnecessary brackets generated in an output. This serves a purpose that an output is always correct, since additional brackets does not actually change an expression outcome.
+There will be additional, unnecessary brackets generated in the output. This serves a purpose that the output is always correct, since additional brackets does not actually change the expression outcome.
 
 Example of usage in interactive mode:
+
 **input:**
 ```
 xy+
 ab*cd+*e-
 ```
+
 **output:**
 ```
 (x+y)
